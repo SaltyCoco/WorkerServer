@@ -357,69 +357,7 @@ def morningFundingReportEM():
     msg['Subject'] = "<your subject line>"
 
     bodyORG = MIMEText(""" 
-                <head>
-                <title>Pending Loans</title>
-                <style type='text/css'>
-                    #t02 {font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;border-collapse: collapse;width: 50%;}
-                    #t02 td, #t02 th {border: 1px solid #ddd;padding: 8px;}#t02 tr:nth-child(even){background-color: #f2f2f2;}
-                    #t02 tr:hover {background-color: #ddd;}
-                    #t02 th{padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #4CAF50;color: white;}
-                    #t01 {font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;}
-                    #t01 td, #t01 th {border: 1px solid #ddd;padding: 8px;}#t01 tr:nth-child(even){background-color: #f2f2f2;}
-                    #t01 tr:hover {background-color: #ddd;}
-                    #t01 th{padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #4CAF50;color: white;}
-                </style>
-                </head>
-                <body>
-                    <h3>Dashboards</h3>
-
-                    <a href='<plotly url>' style='color: rgb(2, 35, 249); text-decoration: none; font-weight: 200;' target='_blank'>Click to view the Real Time Analytics Dashboard</a>
-                    <br><br>
-                    <a href='<plotly url>' style='color: rgb(2, 35, 249); text-decoration: none; font-weight: 200;' target='_blank'>Click to view the FPD Dashboard</a>
-                    <br></br>
-                    <h3>title</h3>
-                    <table id='t02'>
-                        <tr>
-                            <th><h3>title</h3></th>
-                            <td>$""" + str(format(int(mornForecastCalc_var().morningFundingForecast), ',')) + """</td>
-                        </tr>
-                        <tr>
-                            <th><h3>Risk Daily Forecast</h3></th>
-                            <td>$""" + str(mornRiskCalc_var().rfTotal) + """</td>
-                        </tr>
-                    </table>
-                    <br>
-                    <h3>title</h3>
-                    <p1>note about table</p1>
-                    <table id='t01'>
-                        <tr>
-                            <th>title</th>
-                            <th>Count</th> 
-                            <th>Amount</th>
-                        </tr>
-                        <tr>
-                            <td>Former</td>
-                            <td>""" + str(mornPending_var().cntFormer) + """</td>
-                            <td>$""" + str(mornPending_var().revFormerTotal) + """</td>
-                        </tr>
-                        <tr>
-                            <td>New (DM)</td>
-                            <td>""" + str(mornPending_var().cnt_new_dm_Total) + """</td>
-                            <td>$""" + str(mornPending_var().revNew_dm_Total) + """</td>
-                        </tr>
-                        <tr>
-                            <td>New Digital Channel</td>
-                            <td>""" + str(mornPending_var().cntNewTotal) + """</td>
-                            <td>$""" + str(mornPending_var().revNewTotal) + """</td>
-                        </tr>
-                        <tr>
-                            <td>Total</td>
-                            <td>""" + str(mornPending_var().cntTotal) + """</td>
-                            <td>$""" + str(mornPending_var().revFundedTotal) + """</td>
-                        </tr>
-                    </table>
-                    <br>
-                    <p1>Ryan Schulte</p1></body></html>
+               <html>You HTML for the email.</html>
                 """, 'html', 'utf-8')
 
     msg.attach(bodyORG)
